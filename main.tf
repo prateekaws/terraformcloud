@@ -5,14 +5,6 @@ provider "aws" {
 }
 
 resource "aws_instance" "my-instance" {
-  count         = var.instance_count
-  ami           = lookup(var.ami,var.aws_region)
-  instance_type = var.instance_type
-  associate_public_ip_address = true
-  key_name      = "new-key"
-
-  tags = {
-    Name  = element(var.instance_tags, count.index)
-    Batch = "5AM"
-  }
+  ami           = hstdgtdg
+  instance_type = t2.micro
 }
